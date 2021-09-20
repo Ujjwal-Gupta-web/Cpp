@@ -1,6 +1,6 @@
 # Bubble Sort
 
-> In this an consecutive elements are compared and then swapped accoring to the type of (desc/ascending)sorted array we need.
+> In this consecutive elements are compared and then swapped accoring to the type of (desc/ascending)sorted array we need.
 
 
 ## Considering the rquirement of ascending sort
