@@ -15,20 +15,15 @@ struct node
     }
 };
 
-node *buildTree()
+node *buildHeightBalancedTree(int *arr,int start, int end)
 {
-    int d;
-    cin >> d;
-
-    if (d == -1)
-    {
+    if(start>end){
         return NULL;
     }
-    node *root = new node(d);
-    root->left = buildTree();
-    root->right = buildTree();
 
-    return root;
+    int mid=(start+end)/2;
+    node *root=new node(arr[mid]);
+    
 }
 
 void printPreTree(node *root)
@@ -70,21 +65,24 @@ bool isHeightBalanced(node *root)
     return false;
 }
 
+
+
 int main()
 {
 
-    cout << "\nEnter the tree inputs: ";
-    node *root = buildTree();
+    int arr[]={1,2,3,4,5,6,66,77,876,876,8,769,76};
+    int size=sizeof(arr)/sizeof(int);
+
+    node *root = buildHeightBalancedTree(arr,0,size-1);
+
     cout << "\nThis is my tree in Preorder Traversal\n";
     printPreTree(root);
-
-    if (isHeightBalanced(root))
-    {
-        cout << "\nThe tree is Height Balanced";
+  
+    if(isHeightBalanced(root)){
+        cout<<"\nThe tree is Height Balanced";
     }
-    else
-    {
-        cout << "\nThe tree is NOT Height Balanced";
+    else{
+        cout<<"\nThe tree is NOT Height Balanced";
     }
 
     return 0;
