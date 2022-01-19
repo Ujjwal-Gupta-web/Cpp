@@ -80,10 +80,10 @@ int main()
     printPreTree(root);
 
     if(isHeightBalanced(root)){
-        cout<<"\nThe tree is Height Balanced or AVL tree";
+        cout<<"\nThe tree is Height Balanced";
     }
     else{
-        cout<<"\nThe tree is NOT Height Balanced or AVL tree";
+        cout<<"\nThe tree is NOT Height Balanced";
     }
 
     return 0;
