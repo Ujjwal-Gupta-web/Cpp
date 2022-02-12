@@ -23,7 +23,10 @@ node *buildHeightBalancedTree(int *arr,int start, int end)
 
     int mid=(start+end)/2;
     node *root=new node(arr[mid]);
-    
+    root->left=buildHeightBalancedTree(arr,start,mid-1);
+    root->right=buildHeightBalancedTree(arr,mid+1,end);
+
+    return root;
 }
 
 void printPreTree(node *root)
@@ -86,12 +89,4 @@ int main()
     }
 
     return 0;
-
-    //{3 4 -1 6 -1 -1 5 1 -1 -1 -1};
-    // visualizing this tree
-    //       3
-    //   (       )
-    //  4         5
-    //    )     (
-    //    6     1
 }
